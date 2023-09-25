@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom";
 
+import "./index.css";
+
 function BookList() {
 	return (
-		<section>
+		<section className="booklist">
 			<Book />
 			<Book />
 			<Book />
@@ -13,7 +15,7 @@ function BookList() {
 
 const Book = () => {
 	return (
-		<article>
+		<article className="book">
 			<Image />
 			<Title />
 			<Author />
@@ -32,7 +34,11 @@ const Image = () => (
 
 const Title = () => <h1>Code Red</h1>;
 
-const Author = () => <h1>Kyle Mills</h1>;
+const Author = () => (
+	<h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+		Kyle Mills
+	</h4>
+);
 
 // const Greeting = () => {
 // 	return React.createElement(
