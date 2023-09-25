@@ -1,19 +1,38 @@
-import React, { createElement } from "react";
+import React from "react";
 import ReactDom from "react-dom";
 
-function Greeting() {
+function BookList() {
 	return (
-		<div className="">
-			<Person />
-			<Message />
-		</div>
+		<section>
+			<Book />
+			<Book />
+			<Book />
+		</section>
 	);
 }
 
-const Person = () => <h2>john doe</h2>;
-const Message = () => {
-	return <p>this my msg</p>;
+const Book = () => {
+	return (
+		<article>
+			<Image />
+			<Title />
+			<Author />
+		</article>
+	);
 };
+
+// uses parentheses over curly braces if no return statement included.
+
+const Image = () => (
+	<img
+		src="https://storage.googleapis.com/du-prd/books/images/9781982164997.jpg"
+		alt=""
+	/>
+);
+
+const Title = () => <h1>Code Red</h1>;
+
+const Author = () => <h1>Kyle Mills</h1>;
 
 // const Greeting = () => {
 // 	return React.createElement(
@@ -23,4 +42,4 @@ const Message = () => {
 // 	);
 // };
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+ReactDom.render(<BookList />, document.getElementById("root"));
